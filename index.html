@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="pageTitle">Portfolio</title>
+  <meta name="description" id="metaDesc" content="Personal Portfolio" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+
+  <!-- CONFIG — সব তথ্য এখানে আছে, এই ফাইল এডিট করুন -->
+  <script src="js/config.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-brand">
+        <span class="brand-initials" id="navInitials">SP</span>
+        <span class="brand-name" id="navName">Portfolio</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about"       class="nl">About</a></li>
+        <li><a href="#skills"      class="nl">Skills</a></li>
+        <li><a href="#experience"  class="nl">Experience</a></li>
+        <li><a href="#education"   class="nl">Education</a></li>
+        <li><a href="#achievements" class="nl">Achievements</a></li>
+        <li><a href="#contact"     class="nl">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════
+       HERO
+  ══════════════════════════════════ -->
+  <section id="home" class="hero">
+    <div class="container">
+
+      <!-- Optional photo -->
+      <div id="heroPhotoWrap" class="hero-photo-wrap" style="display:none;">
+        <div class="hero-avatar" id="heroAvatar">
+          <!-- filled by JS if showPhoto=true -->
+        </div>
+      </div>
+
+      <div class="hero-text">
+        <div class="hero-badge" id="heroBadge">
+          <span class="badge-dot"></span>
+          Available for Opportunities
+        </div>
+        <h1 class="hero-title">
+          Hi, I'm <span class="accent" id="heroName">—</span>
+        </h1>
+        <p class="hero-role">
+          <span id="typingText"></span><span class="cursor">|</span>
+        </p>
+        <p class="hero-summary" id="heroSummary"></p>
+
+        <!-- Stats row -->
+        <div class="stats-row" id="statsRow"></div>
+
+        <!-- CTA buttons -->
+        <div class="hero-ctas">
+          <a href="#contact" class="btn-main">
+            <i class="fas fa-envelope"></i> Contact Me
+          </a>
+          <a href="#about" class="btn-ghost">
+            <i class="fas fa-user"></i> About Me
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       ABOUT
+  ══════════════════════════════════ -->
+  <section id="about" class="section alt-bg">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-tag">Who I Am</span>
+        <h2 class="sec-title">About <span class="accent">Me</span></h2>
+      </div>
+
+      <div class="about-layout">
+
+        <!-- Optional photo column -->
+        <div id="aboutPhotoCol" class="about-photo-col" style="display:none;">
+          <div class="about-photo-frame" id="aboutPhotoFrame"></div>
+        </div>
+
+        <!-- Info column -->
+        <div class="about-info-col" id="aboutInfoCol">
+          <h3 class="about-role" id="aboutRole"></h3>
+          <p class="about-summary" id="aboutSummary"></p>
+
+          <div class="info-grid" id="infoGrid"></div>
+
+          <!-- Languages -->
+          <div class="lang-block" id="langBlock"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       SKILLS
+  ══════════════════════════════════ -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-tag">What I Know</span>
+        <h2 class="sec-title">Technical <span class="accent">Skills</span></h2>
+      </div>
+      <div class="skills-grid" id="skillsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       EXPERIENCE
+  ══════════════════════════════════ -->
+  <section id="experience" class="section alt-bg">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-tag">My Journey</span>
+        <h2 class="sec-title">Work <span class="accent">Experience</span></h2>
+      </div>
+      <div class="timeline" id="experienceTimeline"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       EDUCATION
+  ══════════════════════════════════ -->
+  <section id="education" class="section">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-tag">Academic Background</span>
+        <h2 class="sec-title">My <span class="accent">Education</span></h2>
+      </div>
+      <div class="edu-list" id="eduList"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       ACHIEVEMENTS
+  ══════════════════════════════════ -->
+  <section id="achievements" class="section alt-bg">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-tag">Key Milestones</span>
+        <h2 class="sec-title">My <span class="accent">Achievements</span></h2>
+      </div>
+      <div class="ach-grid" id="achGrid"></div>
+
+      <!-- Strengths -->
+      <div id="strengthsBlock"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       CONTACT
+  ══════════════════════════════════ -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-tag">Let's Connect</span>
+        <h2 class="sec-title">Get In <span class="accent">Touch</span></h2>
+      </div>
+      <div class="contact-layout">
+
+        <!-- Contact cards -->
+        <div class="contact-cards" id="contactCards"></div>
+
+        <!-- Form -->
+        <div class="contact-form-wrap" id="contactFormWrap">
+          <form class="contact-form" id="contactForm">
+            <div class="fg">
+              <input type="text"  id="cfName"    placeholder="Your Name"    required />
+            </div>
+            <div class="fg">
+              <input type="email" id="cfEmail"   placeholder="Your Email"   required />
+            </div>
+            <div class="fg">
+              <input type="text"  id="cfSubject" placeholder="Subject"      required />
+            </div>
+            <div class="fg">
+              <textarea id="cfMsg" placeholder="Your Message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn-main full-w" id="cfSubmit">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       FOOTER
+  ══════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p id="footerLeft"></p>
+      <p id="footerRight"></p>
+    </div>
+  </footer>
+
+  <!-- Back-to-top -->
+  <button id="btt" class="btt" title="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Toast -->
+  <div id="toast" class="toast">
+    <i class="fas fa-check-circle"></i> Message sent!
+  </div>
+
+  <!-- Main JS (reads config.js) -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
